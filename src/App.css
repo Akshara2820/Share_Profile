@@ -27,7 +27,7 @@ html {
   height: 5rem;
   display: grid;
   grid-template-columns: 10rem 1fr 2fr 1fr 10rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+  box-shadow: rgba(115, 115, 145, 0.815) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 .profile-navbar{
@@ -79,4 +79,18 @@ html {
   width: 5rem;
   height: 3rem;
   margin-top: -3rem;
+}
+
+.Profile-card{
+margin-top: 5rem;
+margin-left: 40rem;
+}
+
+.expirence-button{
+  height: 1rem;
+  width: 3rem;
+}
+.share_button{
+  margin-left: 50rem;
+  margin-top: 1rem;
 }
