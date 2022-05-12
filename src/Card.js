@@ -4,31 +4,6 @@ import { Component } from 'react';
 import axios from 'axios';
 
 class ProfileCard extends Component {
-  constructor(props) {
-    super(props)
-    this.state ={
-      viewCompleted: false,
-      todoList: [],
-      activeItem:{
-        name:"",
-        expirence:"",
-        education:"",
-      }
-    };
-  }
-
-  componentDidMount(){
-    this.refershList();
-
-  }
-
-  refreshList = () => {
-    axios
-      .get("https://api.meetworks.in/users/get_unique_jobseeker_profile")
-      .then((res) => this.setState({ todoList: res.data }))
-      .catch((err) => console.log(err));
-  };
-
     render (){
         return (
             <div className='Profile-card'>
