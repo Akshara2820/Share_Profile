@@ -13,7 +13,11 @@ class ProfileCard extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { user: {} };
+    this.state = { 
+              user: {} ,
+              user_experiences:[],
+              user_qualifications:[],
+              };
   }
 
   async componentDidMount() {
@@ -28,16 +32,14 @@ class ProfileCard extends Component {
       },
     };
     let response = await axios(options);
-
     this.setState({
-      user: response.data [0],
-
+      user: response.data[0],
+      user_experiences:response.data[0].user_experiences,
+      user_qualifications:response.data[0].user_qualifications,
     });
   }
 
   render() {
-    console.log(this.state.user);
-    console.log("+*+*+*",this.state.user.user_experiences)
     return (
 
       <div className="Profile-card">
@@ -48,7 +50,7 @@ class ProfileCard extends Component {
 
             <Card.Body>
               <Card.Title className="name">
-                {this.state.user.jobseeker_name} | <BsGeoAltFill/> {this.state.user.area} {this.state.user.city}
+                {this.state.user.jobseeker_name} ||{this.state.user.area} {this.state.user.city}
               </Card.Title><br></br>
               <Card.Text className="expirence-class">
                 <br></br>
@@ -56,12 +58,16 @@ class ProfileCard extends Component {
               </Card.Text>
               <h6> Filter</h6>
               <Card.Text>
-             
+              {this.state.user_experiences[0]?.company_name} <br></br>
+              {this.state.user_experiences[0]?.company_starting_date}<br></br>
+              <br></br>{this.state.user_experiences[0]?.role_discription}
               </Card.Text>
               <Card.Text className="expirence-class">
                 EDUCATION <br></br>
               </Card.Text>
               {this.state.user.user_degree}
+              {this.state.user_qualifications[0]?.user_degree} || {this.state.user_qualifications[0]?.course_type}<br></br>
+              {this.state.user_qualifications[0]?.user_college} || {this.state.user_qualifications[0]?.user_passing_year}
             </Card.Body>
           </div>
         </Card>
