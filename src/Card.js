@@ -63,7 +63,7 @@ class ProfileCard extends Component {
               <br></br>{this.state.user_experiences[0]?.role_discription}
               </Card.Text>
               <Card.Text className="expirence-class">
-                EDUCATION <br></br>
+              <BsFillBagCheckFill/> EDUCATION <br></br>
               </Card.Text>
               {this.state.user.user_degree}
               {this.state.user_qualifications[0]?.user_degree} || {this.state.user_qualifications[0]?.course_type}<br></br>
